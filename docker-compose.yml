@@ -1,0 +1,21 @@
+services:
+  openwebui:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      OPENAI_API_KEY: sk-7JNq1WlemCK2amK32PHJ4g
+      OPENAI_API_BASE_URL: https://litellm.amazeeai-us2.amazeeio.review
+      RAG_OPENAI_API_KEY: sk-7JNq1WlemCK2amK32PHJ4g
+      RAG_OPENAI_API_BASE_URL: https://litellm.amazeeai-us2.amazeeio.review
+      DEFAULT_MODELS: claude-3-5-sonnet
+      PGVECTOR_DB_URL: postgresql://user_1b9b66e7:8d43d6d55d1f4435881d84310455e5ed@vectordb.amazeeai-us2.amazeeio.review/db_d839c5a1
+      WEBUI_SECRET_KEY: 8d43d6d55d1f4435881d84310455e5ed
+    ports:
+      - "3000:8080"
+    user: "10000"
+    volumes:
+      - ./data:/app/backend/data
+    labels:
+      lagoon.type: python-persistent
+      lagoon.persistent: /app/backend/data
