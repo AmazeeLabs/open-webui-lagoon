@@ -8,4 +8,5 @@ ENV ENABLE_OLLAMA_API=false \
     RAG_EMBEDDING_ENGINE=openai \
     RAG_EMBEDDING_MODEL=embeddings \
     STATIC_DIR=/app/backend/data/static \
-    DATA_DIR=/app/backend/data
+    DATA_DIR=/app/backend/data \
+    PORT=8800
